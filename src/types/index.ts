@@ -21,3 +21,38 @@ export interface Calculation {
   total: number;
   date: Date;
 }
+
+export interface Firm {
+  id: string;
+  name: string;
+  code: string;
+  communicationCommission?: number;
+  tax?: number;
+  discountCommission?: number;
+  commission?: number;
+}
+
+export interface PriceCalculationRequest {
+  fullPrice: number;
+  discount: number;
+  firm: {
+    name: string;
+    code: string;
+  };
+}
+
+export interface PriceCalculationResponse {
+  fullPrice: number;
+  discount: number;
+  discountCommission: number;
+  tax: number;
+  communicationCommission: number;
+  commission: number;
+  profit: number;
+  firm: Firm;
+}
+
+export interface ApiResponse<T> {
+  resultMapping: string;
+  responseData: T;
+}
