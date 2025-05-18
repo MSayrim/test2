@@ -12,8 +12,8 @@ export const calculationTypes: CalculationType[] = [
     id: 'finance',
     name: 'calculator.types.finance',
     icon: 'Calculator',
-    available: false,
-    description: 'Coming soon - Personal finance calculations'
+    available: true,
+    description: 'Calculate prices and commissions'
   },
   {
     id: 'travel',

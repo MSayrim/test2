@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import CalculationTypesGrid from './components/CalculationTypesGrid';
 import FoodCalculator from './components/FoodCalculator';
+import PriceCalculator from './components/PriceCalculator';
 import Footer from './components/Footer';
 
 function App() {
@@ -29,8 +30,9 @@ function App() {
         />
         
         {selectedCalculationType === 'food' && <FoodCalculator />}
+        {selectedCalculationType === 'finance' && <PriceCalculator />}
         
-        {selectedCalculationType !== 'food' && (
+        {!['food', 'finance'].includes(selectedCalculationType) && (
           <div className="bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md p-8 mt-6 text-center">
             <h2 className="text-2xl font-bold mb-4">{t('app.comingSoon')}</h2>
             <p className="text-gray-600 dark:text-gray-400">
@@ -50,5 +52,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
